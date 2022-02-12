@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo App</title>
+    <script src="fonts/fontawesome-free-5.15.4-web/js/all.min.js"></script>
+    <script src="moment.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-section">
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" name="search-city" id="search-input" placeholder="Rechercher la ville ...">
+                <span class="microphone">
+                    <i class="fas fa-microphone recording"></i>
+                    <span class="recording-icon"></span>
+                </span>
+            </div>
+            <div class="info-wrapper">
+                <p class="city-name">--</p>
+                <p class="weather-state">--</p>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="weather-icon">
+                <p class="temperature">--</p>
+            </div>
+        </div>
+        <div class="additional-section">
+            <div class="row">
+                <div class="item">
+                    <div class="label">Lever</div>
+                    <div class="value sunrise">--</div>
+                </div>
+                <div class="item">
+                    <div class="label">Coucher</div>
+                    <div class="value sunset">--</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="item">
+                    <div class="label">Humidité</div>
+                    <div class="value"><span class="humidity">--</span>%</div>
+                </div>
+                <div class="item">
+                    <div class="label">Vent</div>
+                    <div class="value"><span class="wind-speed">--</span> km/h</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="help">
+        <p>Vous pouvez rechercher une ville manuelle ou appuyez vous sur <span class="microphone"><i
+                    class="fas fa-microphone"></i></span> pour activer Assistant
+            personnel intelligent.
+            <br><br>
+            1. Demander la météo d'une ville:
+            <br>
+            - "Météo de " + nom de ville: "Météo de Toulouse" (recommandé)
+            <br>
+            - nom de ville: "Paris", "Perpignan"
+            <br>
+            - "J'aime Bordeaux", "J'aime Marseille"
+            <br>
+            - "Je vais à Paris", "Je vais de Marseille à Paris" => il montrera le météo à Paris
+            <br>
+            - "Je vais de Marseille à Paris avec Jean-Paul", "Je vais de Marseille à Paris avec ma mère" => il montrera
+            le météo à Paris
+            <br><br>
+            2. Demander l'heure:
+            <br>
+            - " il est quelle heure? "
+            <br>
+            - " quelle heure est-il?"
+            <br>
+            ...
+
+        </p>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
