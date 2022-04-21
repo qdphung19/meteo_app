@@ -56,9 +56,11 @@
     0% {
         box-shadow: 0 0 3px 0 rgba(173, 0, 0, 0.3);
     }
+
     65% {
         box-shadow: 0 0 3px 5px rgba(173, 0, 0, 0.3);
     }
+
     100% {
         box-shadow: 0 0 3px 5px rgba(173, 0, 0, 0);
     }
@@ -138,11 +140,9 @@
 }
 
 .help {
-    width: 350px;
-    height: 400px;
-    position: absolute;
-    top: 50px;
-    right: 30px;
+    width: 400px;
+    height: 350px;
+    margin: 42px auto;
     border-radius: 5px;
     border: 1px dashed black;
     padding: 10px;
