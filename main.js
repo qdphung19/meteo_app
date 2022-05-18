@@ -67,6 +67,7 @@ const handleVoice = (text) => {
     console.log('[text]: ', text);
     const handleTextOrigin = text;
     let handleText = text.toLowerCase();
+    console.log('[handleText]: ', handleText);
     let textAnalyse;
     let location;
     let result;
@@ -78,17 +79,27 @@ const handleVoice = (text) => {
     }
     if (handleText.includes('à')) {
         textAnalyse = handleText.split('à')[1].trim();
-        location = textAnalyse;
+        console.log('[textAnalyse]: ', textAnalyse);
+        location = textAnalyse.charAt(0).toUpperCase() + textAnalyse.slice(1);
         if (textAnalyse.includes(' ')) {
-            let textAnalyse2 = textAnalyse.split(' ');
-            result = textAnalyse2.filter((e) => e[0] == e[0].toUpperCase());
-            location = result[0];
+            let textAnalyse2 = textAnalyse.split(' ')[0];
+            console.log('[textAnalyse2]: ', textAnalyse2);
+            result = textAnalyse2.charAt(0).toUpperCase() + textAnalyse2.slice(1);
+            console.log('[result]: ', result);
+
+            location = result;
         }
+    } else if (handleText.includes('de')) {
+        textAnalyse = handleText.split('de')[1].trim();
+        location = textAnalyse.charAt(0).toUpperCase() + textAnalyse.slice(1);
     } else {
-        textAnalyse = handleText.split(' ');
-        result = textAnalyse.filter((e) => e[0] == e[0].toUpperCase());
+        textAnalyse = handleText.split(' ')[0].trim();
+        location = textAnalyse.charAt(0).toUpperCase() + textAnalyse.slice(1);
+        console.log('[textAnalyse]: ', textAnalyse);
+        // result = textAnalyse.filter((e) => e[0] == e[0].toUpperCase());
+        // console.log('[result]: ', result);
         // result[result.length - 1] == [];
-        location = result[result.length - 1];
+        // location = result[result.length - 1];
     }
 
     // const location = textAnalyse[textAnalyse.length - 1].trim();
@@ -114,7 +125,7 @@ const handleVoice = (text) => {
         const changeEvent = new Event('change');
         searchInput.dispatchEvent(changeEvent);
         setTimeout(() => {
-            console.log(cityName.innerHTML);
+            console.log('[cityName.innerHTML]: ', cityName.innerHTML);
             if (cityName.innerHTML !== '--') {
                 const textToSpeech = `Météo à  ${cityName.innerHTML}:${weatherState.innerHTML},
              la température est ${temperature.innerHTML} degré `;
