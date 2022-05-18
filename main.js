@@ -72,6 +72,18 @@ const handleVoice = (text) => {
     let location;
     let result;
 
+    if (handleText.includes('heure')) {
+        const textToSpeech = `il est ${moment().hours()} heures ${moment().minutes()} minute`;
+        speak(textToSpeech);
+        return;
+    }
+
+    if (handleText.includes("l'heure")) {
+        const textToSpeech = `il est ${moment().hours()} heures ${moment().minutes()} minute`;
+        speak(textToSpeech);
+        return;
+    }
+
     // console.log(handleText);
     if (handleText.includes('st')) {
         handleText = handleText.replace('st ', 'Saint-');
@@ -137,17 +149,17 @@ const handleVoice = (text) => {
         return;
     }
 
-    if (handleText.includes('heure')) {
-        const textToSpeech = `il est ${moment().hours()} heures ${moment().minutes()} minute`;
-        speak(textToSpeech);
-        return;
-    }
+    // if (handleText.includes('heure')) {
+    //     const textToSpeech = `il est ${moment().hours()} heures ${moment().minutes()} minute`;
+    //     speak(textToSpeech);
+    //     return;
+    // }
 
-    if (handleText.includes("l'heure")) {
-        const textToSpeech = `il est ${moment().hours()} heures ${moment().minutes()} minute`;
-        speak(textToSpeech);
-        return;
-    }
+    // if (handleText.includes("l'heure")) {
+    //     const textToSpeech = `il est ${moment().hours()} heures ${moment().minutes()} minute`;
+    //     speak(textToSpeech);
+    //     return;
+    // }
 
     speak('Réessayez');
 };
